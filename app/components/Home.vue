@@ -1,18 +1,26 @@
 <template>
-  <Page>
-    <ActionBar>
-      <Label text="Home"/>
-    </ActionBar>
+  <BottomNavigation>
+    <TabStrip
+      backgroundColor="white"
+      selectedItemColor="black"
+      unSelectedItemColor="#b3b3b3"
+    >      
+      <TabStripItem
+        title="News"
+      ></TabStripItem>      
+    </TabStrip>    
 
-    <GridLayout>
-      <Label class="info">
-        <FormattedString>
-          <Span class="fas" text.decode="&#xf135; "/>
-          <Span :text="message"/>
-        </FormattedString>
-      </Label>
-    </GridLayout>
-  </Page>
+    <TabContentItem>
+      <Frame>
+        <Page>
+          <ActionBar title="Title">             
+          </ActionBar>
+            <Label :text="message" textWrap="true" />            
+        </Page>
+      </Frame>
+    </TabContentItem>
+    
+  </BottomNavigation>
 </template>
 
 <script lang="ts">

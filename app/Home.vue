@@ -2,13 +2,13 @@
   <BottomNavigation>
     <TabStrip
       backgroundColor="white"
-      selectedItemColor="black"
+      selectedItemColor="rgb(41, 36, 36)"
       unSelectedItemColor="#b3b3b3"
     >
-      <TabStripItem iconSource="res://idea_on"></TabStripItem>
-      <TabStripItem iconSource="res://wired_controller"></TabStripItem>
-      <TabStripItem iconSource="res://user_settings"></TabStripItem>
-      <TabStripItem iconSource="res://shopping_bag"></TabStripItem>
+      <TabStripItem title=" " iconSource="res://idea_on"></TabStripItem>
+      <TabStripItem title="" iconSource="res://wired_controller"></TabStripItem>
+      <TabStripItem title=" " iconSource="res://user_settings"></TabStripItem>
+      <TabStripItem title="" iconSource="res://shopping_bag"></TabStripItem>
     </TabStrip>
 
     <TabContentItem>

@@ -4,9 +4,7 @@
     <StackLayout>
       <ListView for="item in items" @itemTap="onItemTap">
         <v-template>
-          <StackLayout>
-            <Label :text="item" />
-          </StackLayout>
+          <ProjectRow :project="item" />
         </v-template>
       </ListView>
     </StackLayout>
@@ -17,14 +15,25 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
 import { isIOS } from "@nativescript/core/platform";
 import { Page } from "@nativescript/core";
+import ProjectRow from "../components/ProjectRow.vue";
+import Project from "@/models/Project";
+import Order404 from "@/projects/Order404";
 
-@Component
+@Component({
+  components: {
+    ProjectRow
+  }
+})
 export default class Projects extends Vue {
   get title(): string {
-    return "Hobbies"
+    return "Projects"
   }
-  get items(): string[] {
-    return ["Pedro", "Natalia"];
+  get items(): Project[] {
+
+    const order404 = new Order404();
+    
+    return [order404];
+
   }
 
   onLoaded(args: any) {
@@ -34,10 +43,15 @@ export default class Projects extends Vue {
       page.frame.ios.controller.navigationBar.sizeToFit();
     }
   }
+
+  onItemTap(event: any) {
+    console.log(event.item.name);
+  }
+
 }
 </script>
 
-<style>
+<style scoped>
 ListView {
   height: 100%;
 }
